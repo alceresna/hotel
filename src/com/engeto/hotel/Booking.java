@@ -74,7 +74,7 @@ public class Booking {
     }
 
 
-    //gets a text description of this booking
+    //gets a text description of specific booking
     public String getDescription(){
         String namesOfGuests = new String("");
         for (Guest guest:guests){

@@ -38,7 +38,7 @@ public class Guest {
         this.born = born;
     }
 
-    //gets a text description of this guest
+    //gets a text description of specific guest
     public String getDescription(){
         return new String("Jméno hosta je "+firstName+" "+lastName+", datum narození je "+born.getDayOfMonth()+
                 "."+born.getMonthValue()+"."+born.getYear()+"\n");

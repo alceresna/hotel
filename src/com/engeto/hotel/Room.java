@@ -56,7 +56,7 @@ public class Room {
         this.haveViewAtSea = haveViewAtSea;
     }
 
-    //gets a text description of this room
+    //gets a text description of specific room
     public String getDescription(){
         return new String("Pokoj "+number+": poèet postelí je "+beds+", cena je "+price+"Kè, pokoj "+(haveBalcony ? "":"ne")+
                 "má balkón, "+(haveViewAtSea ? "":"ne")+"má výhled na moøe\n");
