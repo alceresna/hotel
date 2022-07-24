@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/engeto/hotel/Booking.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/com/engeto/hotel/Guest.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/com/engeto/hotel/Main.java" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/com/engeto/hotel/Room.java" charset="windows-1250" />
+    <file url="PROJECT" charset="windows-1250" />
+  </component>
+</project>
