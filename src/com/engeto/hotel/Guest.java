@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Guest {
 
-    String firstName;
-    String lastName;
-    LocalDate born;
+    private String firstName;
+    private String lastName;
+    private LocalDate born;
 
-    public Guest(String firstName,String lastName,LocalDate born) {
+    public Guest(String firstName, String lastName, LocalDate born) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.born = born;
@@ -39,9 +39,10 @@ public class Guest {
     }
 
     //gets a text description of specific guest
-    public String getDescription(){
-        return new String("Jméno hosta je "+firstName+" "+lastName+", datum narození je "+born.getDayOfMonth()+
-                "."+born.getMonthValue()+"."+born.getYear()+"\n");
+    public String getDescription() {
+        String description = "Jméno hosta je "+firstName+" "+lastName+", datum narození je "+born.getDayOfMonth()+
+                "."+born.getMonthValue()+"."+born.getYear()+"\n";
+        return description;
     }
 
 }

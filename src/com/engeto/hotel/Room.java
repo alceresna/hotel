@@ -2,13 +2,13 @@ package com.engeto.hotel;
 
 public class Room {
 
-    int number;
-    int beds;
-    int price;
-    boolean haveBalcony;
-    boolean haveViewAtSea;
+    private int number;
+    private int beds;
+    private int price;
+    private boolean haveBalcony;
+    private boolean haveViewAtSea;
 
-    public Room(int number,int beds,int price,boolean haveBalcony,boolean haveViewAtSea){
+    public Room(int number, int beds, int price, boolean haveBalcony, boolean haveViewAtSea) {
         this.number = number;
         this.beds = beds;
         this.price = price;
@@ -57,8 +57,9 @@ public class Room {
     }
 
     //gets a text description of specific room
-    public String getDescription(){
-        return new String("Pokoj "+number+": poèet postelí je "+beds+", cena je "+price+"Kè, pokoj "+(haveBalcony ? "":"ne")+
+    public String getDescription() {
+        String description = ("Pokoj "+number+": poèet postelí je "+beds+", cena je "+price+"Kè, pokoj "+(haveBalcony ? "":"ne")+
                 "má balkón, "+(haveViewAtSea ? "":"ne")+"má výhled na moøe\n");
+        return description;
     }
 }

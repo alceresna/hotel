@@ -5,30 +5,29 @@ import java.util.ArrayList;
 
 public class Booking {
 
-    static ArrayList<Booking> listOfBookings = new ArrayList<>();
-    enum TypeOfVacation{
+    private enum TypeOfVacation {
         WORKING,RECREATIONAL
     }
-    Room room;
-    ArrayList<Guest> guests = new ArrayList<>();
-    LocalDate begin;
-    LocalDate end;
-    TypeOfVacation typeOfVacation;
+    private Room room;
+    private ArrayList<Guest> guests = new ArrayList<>();
+    private LocalDate begin;
+    private LocalDate end;
+    private TypeOfVacation typeOfVacation;
 
-    public Booking(Room room,Guest guest,LocalDate begin,LocalDate end,TypeOfVacation typeOfVacation){
+    public Booking(Room room, Guest guest, LocalDate begin, LocalDate end, TypeOfVacation typeOfVacation) {
         this.room = room;
         guests.add(guest);
         this.begin = begin;
         this.end = end;
         this.typeOfVacation = typeOfVacation;
-        listOfBookings.add(this);
+        ListOfBookings.addBooking(this);
     }
-    public Booking(Room room,Guest guest,LocalDate begin,LocalDate end){
-        this(room,guest,begin,end,TypeOfVacation.RECREATIONAL);
+    public Booking(Room room, Guest guest, LocalDate begin, LocalDate end) {
+        this(room, guest, begin, end, TypeOfVacation.RECREATIONAL);
     }
 
-    public Booking(Room room,Guest guest){
-        this(room,guest,LocalDate.now(),LocalDate.now().plusDays(6));
+    public Booking(Room room, Guest guest) {
+        this(room, guest, LocalDate.now(), LocalDate.now().plusDays(6));
     }
 
     public Room getRoom() {
@@ -75,28 +74,19 @@ public class Booking {
 
 
     //gets a text description of specific booking
-    public String getDescription(){
-        String namesOfGuests = new String("");
-        for (Guest guest:guests){
-            namesOfGuests += guest.firstName+" "+guest.lastName+", ";
+    public String getDescription() {
+        String namesOfGuests = "";
+        for (Guest guest : guests) {
+            namesOfGuests += guest.getFirstName() + " " + guest.getLastName() + ", ";
         }
 
-        return new String("Rezervace na pokoj èíslo "+room.getNumber()+" je zapsána na hosty: "+namesOfGuests+
-                "\n"+"zaèíná "+begin.getDayOfMonth()+
-                "."+begin.getMonthValue()+"."+begin.getYear()+", konèí "+end.getDayOfMonth()+"."+end.getMonthValue()+
-                "."+end.getYear()+"\n"+"typ pobytu: "+
-                (typeOfVacation.equals(TypeOfVacation.RECREATIONAL) ? "rekreaèní":"pracovní")+
-                "\njestliže chcete pøidat více hostù,použijte metodu addGuest\n");
-    }
-
-
-    //gets a text description of all bookings
-    public static String getListOfBookings(){
-        String list = new String("");
-        for (Booking booking:listOfBookings){
-           list += booking.getDescription()+"\n";
-        }
-        return new String ("Seznam pobytù: \n\n"+list);
+        String description = "Rezervace na pokoj èíslo " + room.getNumber() + " je zapsána na hosty: " + namesOfGuests +
+                "\n" + "zaèíná " + begin.getDayOfMonth() +
+                "." + begin.getMonthValue() + "." + begin.getYear() + ", konèí " + end.getDayOfMonth() + "." + end.getMonthValue() +
+                "." + end.getYear() + "\n" + "typ pobytu: " +
+                (typeOfVacation.equals(TypeOfVacation.RECREATIONAL) ? "rekreaèní" : "pracovní") +
+                "\njestliže chcete pøidat více hostù,použijte metodu addGuest\n";
+        return description;
     }
 
 }
