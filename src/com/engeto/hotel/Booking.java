@@ -42,7 +42,8 @@ public class Booking {
         guests.add(guest);
     }
     public void removeGuest(Guest guest){
-        guests.remove(guest);
+        if(guests.size()>=2) guests.remove(guest);
+        else System.out.println("Každý pobyt musí být zapsán alespoò na jednoho hosta");
     }
     public ArrayList<Guest> getGuests(){
         return new ArrayList<>(guests);
@@ -85,7 +86,8 @@ public class Booking {
                 "." + begin.getMonthValue() + "." + begin.getYear() + ", konèí " + end.getDayOfMonth() + "." + end.getMonthValue() +
                 "." + end.getYear() + "\n" + "typ pobytu: " +
                 (typeOfVacation.equals(TypeOfVacation.RECREATIONAL) ? "rekreaèní" : "pracovní") +
-                "\njestliže chcete pøidat více hostù,použijte metodu addGuest\n";
+                "\njestliže chcete pøidat více hostù,použijte metodu addGuest\n" +
+                "jestliže chcete odebrat hosta,použijte metodu removeGuest\n";
         return description;
     }
 
