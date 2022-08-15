@@ -5,9 +5,7 @@ import java.util.ArrayList;
 
 public class Booking {
 
-    private enum TypeOfVacation {
-        WORKING,RECREATIONAL
-    }
+
     private Room room;
     private ArrayList<Guest> guests = new ArrayList<>();
     private LocalDate begin;
